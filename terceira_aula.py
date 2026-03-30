@@ -1,52 +1,53 @@
-# media_final = float(input("Média final = "))
+# Checkpoint 1
+
+# cp1 = float(input("Checkpoint 1 = "))
+# cp2 = float(input("Checkpoint 2 = "))
+# cp3 = float(input("Checkpoint 3 = "))
+# sp1 = float(input("Sprint 1 = "))
+# sp2 = float(input("Sprint 2 = "))
+# gs = float(input("Global Solution = "))
+# print("-" * 45)
 #
-# if media_final >= 6:
-#     print("Aprovado")
+# if cp1 <= cp2 and cp1 <= cp3:
+#     menor = cp1
+# elif cp2 <= cp1 and cp2 <= cp3:
+#     menor = cp2
 # else:
-#     print("Reprovado")
-
-# Exercício 1
-# vel = int(input("Velocidade do carro em km/h = "))
-# if vel > 80:
-#     print("Você foi multado.")
-#     multa = (vel - 80) * 5
-#     print(f"O valor da multa é R${multa:.2f}.")
-
-# Exercício 2
-# num1 = float(input("Número 1 = "))
-# num2 = float(input("Número 2 = "))
-# num3 = float(input("Número 3 = "))
+#     menor = cp3
 #
-# maior = num1
-# if num2 >= num1 and num2 >= num3:
-#     maior = num2
-# if num3 >= num1 and num3 >= num2:
-#     maior = num3
+# media = ((cp1 + cp2 + cp3 - menor + sp1 + sp2) / 4) * 0.4 + gs * 0.6
+# media_peso = media * 0.4
 #
-# menor = num1
-# if num2 <= num1 and num2 <= num3:
-#     menor = num2
-# if num3 <= num1 and num3 <= num2:
-#     menor = num3
-#
-# print(f"Maior = {maior}")
-# print(f"Menor = {menor}")
+# print(f"Média do 1º semestre = {media:.1f}")
+# print("-" * 45)
+# print(f"Média do 1º semestre com peso = {media_peso:.1f}")
 
-# Exercício 3
-# sal = float(input("Salário = R$"))
-# if sal > 1250:
-#     aumento = sal * 0.1
-# else:
-#     aumento = sal * 0.15
-# print(f"Aumento de R${aumento:.2f}")
+# exercício 7
 
-# Exercício 4
-dist = int(input("Distância em km = "))
-if dist <= 200:
-    preco = dist * 0.5
+quant_kWh = int(input("kWh consumida = "))
+tipo_inst = input("Tipo de instalação (R/I/C) = ")
+
+if tipo_inst == "R":
+    if quant_kWh <= 500:
+        preco = 0.40
+    else:
+        preco = 0.65
+elif tipo_inst == "C":
+    if quant_kWh <= 1000:
+        preco = 0.5
+    else:
+        preco = 0.60
+elif tipo_inst == "I":
+    if quant_kWh <= 5000:
+        preco = 0.55
+    else:
+        preco = 0.60
 else:
-    preco = dist * 0.45
-print(f"O valor da passagem é R${preco:.2f}.")
+    preco = 0
+    print("Tipo de instalação é desconhecido.")
+
+valor_pagar = preco * quant_kWh
+print(f"Preço a pagar R$ {valor_pagar:.2f}")
 
 
 
